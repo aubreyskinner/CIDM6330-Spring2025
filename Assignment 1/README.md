@@ -41,6 +41,7 @@ In healthcare, it is crucial to maintain accurate, easily accessible documentati
 4. <b>As an Administrator</b>, <b>I want</b> to secure patient data using encryption <b>so that</b> confidentiality is maintaned. 
 
 #### Use Cases
+![Use Case Diagram](images/UseCase.png)
 
 
 #### Features
