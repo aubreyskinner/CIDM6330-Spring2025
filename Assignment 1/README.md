@@ -221,15 +221,26 @@ This system is designed to streamline the process of recording, viewing, and vis
 ![Record Vitals Diagram](images/RecordVitals.png)
 
 ### Record Vitals (Activity Diagram)
-The Record Vitals feature allows a CNA or Nurse to enter a patient's vital signs into the system. The process is as follows: <br>
-1. Navigate to Enter Vitals Tab
-2. Select Patient
-3. Enter Vitals
-4. Validation Check (Decision) -> If all fields are completed, the user can submit. If field(s) are missing, an error message will be displayed.
-5. Once vitals are successfully submitted, the system will update the patient history and health trend graph
+The Record Vitals feature allows a CNA or Nurse to enter a patient's vital signs into the system. The process is as follows (given the user is logged in): <br>
+2. Navigate to Enter Vitals Tab
+3. Select Patient
+4. Enter Vitals
+5. Validation Check (Decision) -> If all fields are completed, the user can submit. If field(s) are missing, an error message will be displayed.
+6. Once vitals are successfully submitted, the system will update the patient history and health trend graph
 
 ### Feature: View History
 
 ![View History Diagram](images/ViewHistory.png)
 
+### View History (Activity Diagram)
+The View History feature allows a CNA or Nurse to view a patient's past recorded vital signs. The process is as follows (given the user is logged in): <br>
+1. Navigate to the View History Tab
+2. Select Patient
+3. System Performs a Check for Previous Records
+4. Decision Point -> If history is available, the data will be displayed. If no data is available for a given patient, the message, "No history available" will be shown.
+5. If applicable, the user can view patient history
+
 ### Feature: View Health Trends
+
+![View Health Trends Diagram](images/ViewHealthTrends.png)
+
