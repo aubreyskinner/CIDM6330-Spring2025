@@ -218,7 +218,7 @@ This system is designed to streamline the process of recording, viewing, and vis
 
 ### Feature: Record Vitals
 
-![Record Vitals Diagram](images/RecordVitals.png)
+![Record Vitals Diagram](images/RecordVital.png)
 
 ### Record Vitals (Activity Diagram)
 The Record Vitals feature allows a CNA or Nurse to enter a patient's vital signs into the system. The process is as follows (given the user is logged in): <br>
