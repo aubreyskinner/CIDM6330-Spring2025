@@ -46,71 +46,136 @@ In healthcare, it is crucial to maintain accurate, easily accessible documentati
 ![Use Case Diagram](images/UseCase.png)
 <br>
 ### Case 1- Record Vitals
-Actors: CNA, Nurse<br>
-Preconditions: The user must be logged in <br>
 
-Basic Flow:  
+<b>Actors:</b> CNA, Nurse<br>
+
+<b>Preconditions:</b> The user must be logged in <br>
+
+<b>Basic Flow:</b>  
 1. Select Patient 
 2. Enter Vitals 
 3. Submit Vitals 
 4. Data Saved <br>
 
-Alternative Flow: 
+<b>Alternative Flow:</b>
 Missing Values -> Error <br>
 
-Postconditions: Vitals saved, updates health trend (graph)<br>
+<b>Postconditions:</b> Vitals saved, updates health trend (graph)<br>
 
 ### Case 2- View History
-Actors: CNA, Nurse<br>
+<b>Actors:</b> CNA, Nurse<br>
 
 
-Preconditions: The user must be logged in and the patient must have a history in the system <br>
+<b>Preconditions:</b> The user must be logged in and the patient must have a history in the system <br>
 
-Basic Flow: 
+<b>Basic Flow:</b>
 1. Select Patient
 2. Navigate to the Patient History Section
 3. System Displays Past Vitals<br>
 
-Alternative Flow:
-1. No Previous History -> Message Displaying: "No history available"<br>
+<b>Alternative Flow:</b>
+No Previous History -> Message Displaying: "No history available"<br>
 
-Postconditions: User successfully views patient's previous vitals
+<b>Postconditions:</b> User successfully views patient's previous vitals
 
 ### Case 3- View Health Trend Graphs
-Actors: CNA, Nurse<br>
+<b>Actors:</b> CNA, Nurse<br>
 
-Preconditions: The user must be logged in, the patient has recorded vitals in the system, and the system has enough data to generate a graph/table.<br>
+<b>Preconditions:</b> The user must be logged in, the patient has recorded vitals in the system, and the system has enough data to generate a graph/table.<br>
 
-Basic Flow: 
+<b>Basic Flow:</b> 
 1. Select Patient
 2. Navigate to the Health Trends Section
 3. System Displays a Graph
 4. Graph is Displayed to User<br>
 
-Alternative Flow:
-1. Not Enough Previous History -> Message Displaying: "Not enough data available"<br>
+<b>Alternative Flow:</b>
+Not Enough Previous History -> Message Displaying: "Not enough data available"<br>
 
-Postconditions: User successfully views patient's health trends
+<b>Postconditions:</b> User successfully views patient's health trends
 
 ### Case 4- Oversee Case
-Actors: Case Manager<br>
+<b>Actors:</b> Case Manager<br>
 
-Preconditions: The user must be logged in<br>
+<b>Preconditions:</b> The user must be logged in<br>
 
-Basic Flow: 
+<b>Basic Flow:</b> 
 1. Select Patient
 2. Navigate to the applicable data needed
 3. Review Data<br>
 
-Postconditions: User successfully views patient's case information
+<b>Postconditions:</b> User successfully views patient's case information
 
 
 ### Features
-[Detail your features here]
+1. <b>User Authentication-</b> User must be logged in to access the system
+2. <b>Record Vitals-</b> Allows CNAs and Nurses to record patient vitals and have them saved
+3. <b>View Patient History-</b> Allows CNAs and Nurses to view previously recorded vital signs
+4. <b>View Health Trend Graphs-</b> System will generate a graph/table that allows the user to visualize patient data and health trends
+5. <b>Oversee Patient's Case-</b> Allows Case Manager to review patient data
+6. <b>Error Handling-</b> Missing entries or requests with no data available are handled with appropriate messages.
+7. <b>Data Storage-</b> Saves patient vitals securely.
 
 ### Gherkin Validation
-[Include Gherkin scenarios here]
+### Scenario 1:
+<b>Feature: Record Vitals (Successful)</b><br>
+<b>Scenario:</b> CNA/Nurse successfully records patient vitals. <br>
+Given the CNA or Nurse is logged in<br>
+And has a patient selected<br>
+When the vitals are entered correctly<br>
+And they are submitted<br>
+Then the system will save the vitals<br>
+And update the patient health trend graph
 
+### Scenario 2: 
+<b>Feature: Record Vitals (Missing Values)</b> <br>
+<b>Scenario:</b> CNA/Nurse records vitals with missing fields.<br>
+Given the CNA or Nurse is logged in<br>
+And has a patient selected<br>
+When a field is left empty<br>
+Then the system displays an error message<br>
+And prompts the user to enter all required fields
+
+
+### Scenario 3:
+<b>Feature: View History (Successful)</b><br>
+<b>Scenario:</b> Patient history is successfully viewed.<br>
+Given the CNA or Nurse is logged in<br>
+And has a patient selected<br>
+When they navigate to the patient history section<br>
+Then the system displays the patient's history
+
+### Scenario 4:
+<b>Feature: View History (No Previous Data)</b><br>
+<b>Scenario:</b> CNA/Nurse attempts to view patient history when none is available.<br>
+Given the CNA or Nurse is logged in<br>
+And has a patient selected with no previous records<br>
+When they navigate to the patient history section<br>
+Then the system displays a message: "No history available"
+
+### Scenario 5:
+<b>Feature: View Health Trend Graphs (Successful)</b><br>
+<b>Scenario:</b> CNA/Nurse successfully views patient health trend graph.<br>
+Given the CNA or Nurse is logged in<br>
+And has a patient selected<br>
+When they navigate to the health trends section<br>
+Then the system displays a graph containing patient's health trends
+
+### Scenario 6:
+<b>Feature: View Health Trend Graphs (Not Enough Data)</b><br>
+<b>Scenario:</b> CNA/Nurse attempts to view patient health trend graph when there is not enough data.<br>
+Given the CNA or Nurse is logged in<br>
+And has a patient selected with few recorded vitals<br>
+When they navigate to the health trends section<br>
+Then the system displays a message: "Not enough data available"
+
+### Scenario 7:
+<b>Feature: Oversee Patient's Case (Successful)</b><br>
+<b>Scenario:</b> Case Manager successfully reviews patient case information.<br>
+Given the Case Manager is logged in<br>
+And has a patient selected<br>
+When they navigate to the patient's recorded vitals, history, or health trend section<br>
+Then the system displays the appropriate information
 
 ## Specifications
 ### Concept
