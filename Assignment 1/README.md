@@ -179,7 +179,13 @@ Then the system displays the appropriate information
 
 ## Specifications
 ### Concept
-[Write about the concept here]
+This system is designed to streamline the process of recording, viewing, and visualizing patient vitals in healthcare settings (specifically home healthcare). CNAs and nurses can input vital signs, view previous records, and see trends with graphical representations. Case managers can oversee patient data to ensure proper care management. <br>
+
+<b>Primary Goals:</b><br>
+* <b>Efficiency:</b> Reduce manual paperwork and streamline the recording of vital signs<br>
+* <b>Accuracy:</b> Ensure vitals are logged properly and decrease the amount of potential errors<br>
+* <b>Accessibility:</b> Provide a user-friendly interface
+
 
 ### UX Notes
 [Notes about user experience design]
