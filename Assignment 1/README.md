@@ -216,7 +216,7 @@ This system is designed to streamline the process of recording, viewing, and vis
    
 ## Behaviors
 
-### Feature: Record Vitals
+### 1. Feature: Record Vitals
 
 ![Record Vitals Diagram](images/RecordVital.png)
 
@@ -228,7 +228,7 @@ The Record Vitals feature allows a CNA or Nurse to enter a patient's vital signs
 5. Validation Check (Decision) -> If all fields are completed, the user can submit. If field(s) are missing, an error message will be displayed.
 6. Once vitals are successfully submitted, the system will update the patient history and health trend graph
 
-### Feature: View History
+### 2. Feature: View History
 
 ![View History Diagram](images/ViewHistory.png)
 
@@ -240,7 +240,16 @@ The View History feature allows a CNA or Nurse to view a patient's past recorded
 4. Decision Point -> If history is available, the data will be displayed. If no data is available for a given patient, the message, "No history available" will be shown.
 5. If applicable, the user can view patient history
 
-### Feature: View Health Trends
+### 3. Feature: View Health Trends
 
 ![View Health Trends Diagram](images/ViewHealthTrends.png)
 
+### View Health Trends (Activity Diagram)
+The View Health Trends feature allows a CNA or Nurse to access a patient's health trend graph. The process is as follows (given the user is logged in): <br>
+1. Navigate to the Health Trends Tab
+2. Select Patient
+3. System Checks for Sufficient Data
+4. Decision Point -> If there is enough data, a graph visualizing patient health trends will be displayed. If there is not enough data, a message, "Not enough data available" will be displayed. To introduce a new idea, I looped this one back to patient selection; there may be another patient you need to check on within the same process. 
+5. Users can view patient health trends
+
+_***NOTE: The Case Manager features are exact versions of what has already been produced (ex. Case Manager can record vitals, view history, and view health trends)_
