@@ -40,35 +40,94 @@ In healthcare, it is crucial to maintain accurate, easily accessible documentati
 3. <b>As a CNA</b>, <b>I want</b> to be able to search for a patient by name <b>so that</b> I can easily input patient data. <br>
 4. <b>As an Administrator</b>, <b>I want</b> to secure patient data using encryption <b>so that</b> confidentiality is maintaned. 
 
-#### Use Cases
+### Use Cases 
+<br>  
+
 ![Use Case Diagram](images/UseCase.png)
+<br>
+### Case 1- Record Vitals
+Actors: CNA, Nurse<br>
+Preconditions: The user must be logged in <br>
+
+Basic Flow:  
+1. Select Patient 
+2. Enter Vitals 
+3. Submit Vitals 
+4. Data Saved <br>
+
+Alternative Flow: 
+Missing Values -> Error <br>
+
+Postconditions: Vitals saved, updates health trend (graph)<br>
+
+### Case 2- View History
+Actors: CNA, Nurse<br>
 
 
+Preconditions: The user must be logged in and the patient must have a history in the system <br>
+
+Basic Flow: 
+1. Select Patient
+2. Navigate to the Patient History Section
+3. System Displays Past Vitals<br>
+
+Alternative Flow:
+1. No Previous History -> Message Displaying: "No history available"<br>
+
+Postconditions: User successfully views patient's previous vitals
+
+### Case 3- View Health Trend Graphs
+Actors: CNA, Nurse<br>
+
+Preconditions: The user must be logged in, the patient has recorded vitals in the system, and the system has enough data to generate a graph/table.<br>
+
+Basic Flow: 
+1. Select Patient
+2. Navigate to the Health Trends Section
+3. System Displays a Graph
+4. Graph is Displayed to User<br>
+
+Alternative Flow:
+1. Not Enough Previous History -> Message Displaying: "Not enough data available"<br>
+
+Postconditions: User successfully views patient's health trends
+
+### Case 4- Oversee Case
+Actors: Case Manager<br>
+
+Preconditions: The user must be logged in<br>
+
+Basic Flow: 
+1. Select Patient
+2. Navigate to the applicable data needed
+3. Review Data<br>
+
+Postconditions: User successfully views patient's case information
 
 
-#### Features
+### Features
 [Detail your features here]
 
-#### Gherkin Validation
+### Gherkin Validation
 [Include Gherkin scenarios here]
 
 
 ## Specifications
-#### Concept
+### Concept
 [Write about the concept here]
 
-#### UX Notes
+### UX Notes
 [Notes about user experience design]
 
-#### Interfaces (Controls)
+### Interfaces (Controls)
 [Details about user interface and controls]
 
 ## Behaviors
 [Description of the system's behaviors]
 
-#### Feature/Package A
+### Feature/Package A
 [Include diagrams for Feature A and description]
 
-#### Feature/Package N
+### Feature/Package N
 [Include diagrams for Feature N and description]
 
