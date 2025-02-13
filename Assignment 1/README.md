@@ -215,9 +215,9 @@ This system is designed to streamline the process of recording, viewing, and vis
    
 ## Behaviors
 
-
 ### Feature/Package A
-[Include diagrams for Feature A and description]
+
+![Record Vitals Diagram](images/RecordVitals.png)
 
 ### Feature/Package N
 [Include diagrams for Feature N and description]
