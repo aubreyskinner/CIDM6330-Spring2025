@@ -188,13 +188,33 @@ This system is designed to streamline the process of recording, viewing, and vis
 
 
 ### UX Notes
-[Notes about user experience design]
+1. <b>Ease of Use-</b>
+   * Clean and minimal interface
+   * Large, easy-to-read text and buttons to cater to the fast-paced work environment
+   * Logical and intuitive navigation flow
+2. <b>Data Visibility and Accessibility-</b>
+   * Quickly find patient data (current vitals, patient history, trends) with minimal effort
+   * Search functionality to find specific patient data
+   * Graphical representation for easy data interpretation
+3. <b>Error Handling/ Prevention-</b>
+   * Clear error messages to guide users when an issue occurs
 
 ### Interfaces (Controls)
-[Details about user interface and controls]
-
+1. <b>Record Vitals Elements</b>
+   * Dropdown and/or search bar for patient selection
+   * Input fields for vital signs
+   * Submit button to save vitals
+2. <b>View History Elements</b>
+   * Dropdown and/or search bar for patient selection
+   * "View History" button to view previous records of selected patient
+   * Filter options (date range and/or certain vitals)
+3. <b>View Health Trend Graphs Elements</b>
+   * Dropdown and/or search bar for patient selection
+   * "View Trends" button to see graph and/or table visualization
+   * Filter options (date range)
+   
 ## Behaviors
-[Description of the system's behaviors]
+
 
 ### Feature/Package A
 [Include diagrams for Feature A and description]
