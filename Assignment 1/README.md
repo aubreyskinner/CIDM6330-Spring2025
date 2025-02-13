@@ -19,8 +19,8 @@ In healthcare, it is crucial to maintain accurate, easily accessible documentati
    - [Interfaces Controls](#interfaces-controls)
    - [Behaviors](#behaviors)
 8. [Feature: Record Vitals](#record-vitals)
-9. [Feature: View History](#feature-view-history)
-10. [Feature: View Health Trends](#feature-view-health-trends)
+9. [Feature: View History](#view-history)
+10. [Feature: View Health Trends](#view-health-trends)
 
 
 ## Requirements Statements
@@ -216,6 +216,8 @@ This system is designed to streamline the process of recording, viewing, and vis
    
 ## Behaviors
 
+
+### Feature 1
 ### Record Vitals
 
 ![Record Vitals Diagram](images/RecordVital.png)
@@ -228,7 +230,8 @@ The Record Vitals feature allows a CNA or Nurse to enter a patient's vital signs
 5. Validation Check (Decision) -> If all fields are completed, the user can submit. If field(s) are missing, an error message will be displayed.
 6. Once vitals are successfully submitted, the system will update the patient history and health trend graph
 
-### 2. Feature: View History
+### Feature 2
+### View History
 
 ![View History Diagram](images/ViewHistory.png)
 
@@ -240,7 +243,8 @@ The View History feature allows a CNA or Nurse to view a patient's past recorded
 4. Decision Point -> If history is available, the data will be displayed. If no data is available for a given patient, the message, "No history available" will be shown.
 5. If applicable, the user can view patient history
 
-### 3. Feature: View Health Trends
+### Feature 3
+### View Health Trends
 
 ![View Health Trends Diagram](images/ViewHealthTrends.png)
 
