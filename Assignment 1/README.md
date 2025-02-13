@@ -18,7 +18,7 @@ In healthcare, it is crucial to maintain accurate, easily accessible documentati
    - [UX Notes](#ux-notes)
    - [Interfaces Controls](#interfaces-controls)
    - [Behaviors](#behaviors)
-8. [Feature: Record Vitals](#feature-record-vitals)
+8. [Feature: Record Vitals](#record-vitals)
 9. [Feature: View History](#feature-view-history)
 10. [Feature: View Health Trends](#feature-view-health-trends)
 
@@ -216,7 +216,7 @@ This system is designed to streamline the process of recording, viewing, and vis
    
 ## Behaviors
 
-### 1. Feature: Record Vitals
+### Record Vitals
 
 ![Record Vitals Diagram](images/RecordVital.png)
 
