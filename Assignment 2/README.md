@@ -46,6 +46,7 @@
 <b>Case Manager (ManagerID) -> (1:M) -> Patient (ManagerID)</b>
 
 ### Diagram: 
+![ERD](images/ERD.pdf)
 
 ### API in Python Using FastAPI
 
