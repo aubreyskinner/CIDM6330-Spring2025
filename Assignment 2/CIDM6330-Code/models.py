@@ -1,4 +1,4 @@
-from sqlalchemy import Column, Integer, String, ForeignKey, DateTime, Float, DateTime
+from sqlalchemy import Column, Integer, String, ForeignKey, DateTime, Float
 from sqlalchemy.orm import relationship
 from database import Base
 from datetime import datetime
@@ -10,7 +10,7 @@ class CaseManager(Base):
     FirstName = Column(String, nullable=False)
     LastName = Column(String, nullable=False)
 
-    patients = relationship("Patient", back_populates="case_manager")
+    patients = relationship("Patient", back_populates="case_manager", cascade="all, delete-orphan")
 
 class Patient(Base):
     __tablename__ = "patients"
@@ -22,7 +22,7 @@ class Patient(Base):
     ManagerID = Column(Integer, ForeignKey("case_managers.ManagerID"))
 
     case_manager = relationship("CaseManager", back_populates="patients")
-    vitals = relationship("VitalSigns", back_populates="patient")
+    vitals = relationship("VitalSigns", back_populates="patient", cascade="all, delete-orphan")
 
 class HealthcareProvider(Base):
     __tablename__ = "healthcare_providers"
@@ -32,7 +32,7 @@ class HealthcareProvider(Base):
     LastName = Column(String, nullable=False)
     Role = Column(String, nullable=False)
 
-    vitals = relationship("VitalSigns", back_populates="provider")
+    vitals = relationship("VitalSigns", back_populates="provider", cascade="all, delete-orphan")
 
 class VitalSigns(Base):
     __tablename__ = "vital_signs"
@@ -40,7 +40,7 @@ class VitalSigns(Base):
     VitalID = Column(Integer, primary_key=True, index=True)
     PatientID = Column(Integer, ForeignKey("patients.PatientID"))
     ProviderID = Column(Integer, ForeignKey("healthcare_providers.ProviderID"))
-    TimeStamp = Column(DateTime, nullable=False)
+    TimeStamp = Column(DateTime, default=datetime.utcnow, nullable=False)
     BloodPressure = Column(String, nullable=False)
     HeartRate = Column(Integer, nullable=False)
     OxygenSaturation = Column(Integer, nullable=False)

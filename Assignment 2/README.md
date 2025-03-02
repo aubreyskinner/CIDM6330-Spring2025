@@ -49,12 +49,12 @@
 ![ERD](images/ERD.pdf)
 
 ### API in Python Using FastAPI
-
+Included in Project
 
 ### Pydantic Models 
-
+Included in Project
 
 ### Initial Set of CRUD Transactions
-
+Included in Project
 
 
