@@ -54,7 +54,7 @@ class CSVRepository(BaseRepository):
             writer = csv.writer(file)
             writer.writerows(rows)
     
-    # List
+    #list
     def list(self) -> List[object]:
         with open(self.filename, mode='r') as file:
             reader = csv.reader(file)

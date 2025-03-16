@@ -86,7 +86,6 @@ def update_vital_sign(db: Session, vital_id: int, vital: VitalSignsUpdate):
     if not db_vital:
         raise HTTPException(status_code=404, detail="Vital Signs not found")
 
-    # Update other fields as needed
     for key, value in vital.dict(exclude_unset=True).items():
         setattr(db_vital, key, value)
 

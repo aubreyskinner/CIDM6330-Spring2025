@@ -10,7 +10,7 @@ from repositories.memory import MemoryRepository
 
 
 def get_repository(csv_repo: CSVRepository = Depends()):
-    return csv_repo  # You can choose CSVRepository or MemoryRepository here instead
+    return csv_repo  
 
 router = APIRouter(prefix="/case_managers", tags=["Case Managers"])
 

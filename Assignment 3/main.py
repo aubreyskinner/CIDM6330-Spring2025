@@ -2,7 +2,7 @@ from fastapi import FastAPI
 from sqlmodel import SQLModel
 from database import engine
 from routes import patients, case_managers, providers, vitals
-from models import CaseManager, Patient, HealthcareProvider, VitalSigns  # Ensure all models are imported
+from models import CaseManager, Patient, HealthcareProvider, VitalSigns 
 
 def create_db_and_tables():
     SQLModel.metadata.create_all(engine)
