@@ -8,13 +8,13 @@ import crud
 from repositories.csv import CSVRepository
 from repositories.memory import MemoryRepository
 
-# Dependency to get the repository
-def get_repository(db: Session = Depends(get_db)):
-    return SQLRepository(db)  # You can choose CSVRepository or MemoryRepository here instead
+
+def get_repository(csv_repo: CSVRepository = Depends()):
+    return csv_repo  # You can choose CSVRepository or MemoryRepository here instead
 
 router = APIRouter(prefix="/case_managers", tags=["Case Managers"])
 
-# Create Case Manager
+#create case manager
 @router.post("/", response_model=schemas.CaseManager)
 def create_case_manager(manager: schemas.CaseManagerCreate, db: Session = Depends(get_db)):
     new_manager = models.CaseManager(**manager.model_dump())

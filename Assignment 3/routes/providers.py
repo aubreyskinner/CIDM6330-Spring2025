@@ -8,8 +8,8 @@ from repositories.sql import SQLPatientRepository
 from repositories.csv import CSVRepository
 from repositories.memory import MemoryRepository
 
-def get_repository(db: Session = Depends(get_db)):
-    return SQLRepository(db)  #change to CSV or memory here 
+def get_repository(csv_repo: CSVRepository = Depends()):
+    return csv_repo  #change to CSV or memory here 
 
 router = APIRouter(prefix="/providers", tags=["Healthcare Providers"])
 
