@@ -1,36 +1,45 @@
 from sqlmodel import Session, select
-from database import get_session
+from database import get_db 
 from models import Patient
 from repositories.base import BaseRepository
 
+
 class SQLPatientRepository(BaseRepository[Patient]):
 
-    def __init__(self, session: Session):
-        self.session = session
+    def __init__(self):
+        self.db_generator = get_db()
+
+    def get_db(self):
+        return next(self.db_generator)
 
     def get_all(self):
-        return self.session.exec(select(Patient)).all()
+        session = self.get_db() 
+        return session.exec(select(Patient)).all()
 
     def get_by_id(self, patient_id: int):
-        return self.session.get(Patient, patient_id)
+        session = self.get_db()  
+        return session.get(Patient, patient_id)
 
     def create(self, patient: Patient):
-        self.session.add(patient)
-        self.session.commit()
-        self.session.refresh(patient)
+        session = self.get_db()
+        session.add(patient)
+        session.commit()
+        session.refresh(patient)
         return patient
 
     def update(self, patient_id: int, updated_patient: Patient):
+        session = self.get_db() 
         patient = self.get_by_id(patient_id)
         if patient:
             patient.first_name = updated_patient.first_name
             patient.last_name = updated_patient.last_name
-            self.session.commit()
-            self.session.refresh(patient)
+            session.commit()
+            session.refresh(patient)
         return patient
 
     def delete(self, patient_id: int):
+        session = self.get_db() 
         patient = self.get_by_id(patient_id)
         if patient:
-            self.session.delete(patient)
-            self.session.commit()
+            session.delete(patient)
+            session.commit()

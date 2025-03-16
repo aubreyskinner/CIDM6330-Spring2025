@@ -11,11 +11,17 @@ class CaseManagerCreate(CaseManagerBase):
     pass
 
 class CaseManagerUpdate(BaseModel):
-    first_name: Optional[str] = None
-    last_name: Optional[str] = None
+    FirstName: Optional[str] = None
+    LastName: Optional[str] = None
+
+    class Config:
+        orm_mode = True  
 
 class CaseManager(CaseManagerBase):
-    ManagerID: Optional[int] = None  # Allow auto-incrementing
+    ManagerID: Optional[int] = None 
+
+    class Config:
+        orm_mode = True
 
 class PatientBase(SQLModel):
     FirstName: str
@@ -23,18 +29,21 @@ class PatientBase(SQLModel):
     DateOfBirth: datetime
 
 class PatientUpdate(BaseModel):
-    first_name: Optional[str] = None
-    last_name: Optional[str] = None
-    date_of_birth: Optional[str] = None
+    FirstName: Optional[str] = None
+    LastName: Optional[str] = None
+    DateOfBirth: Optional[datetime] = None 
 
-class Config:
-    from_attributes = True
+    class Config:
+        orm_mode = True 
 
 class PatientCreate(PatientBase):
     ManagerID: Optional[int] = None
 
 class Patient(PatientBase):
-    PatientID: Optional[int] = None  # Allow auto-incrementing
+    PatientID: Optional[int] = None  
+
+    class Config:
+        orm_mode = True  
 
 class HealthcareProviderBase(SQLModel):
     FirstName: str
@@ -45,12 +54,18 @@ class HealthcareProviderCreate(HealthcareProviderBase):
     pass
 
 class HealthcareProvider(HealthcareProviderBase):
-    ProviderID: Optional[int] = None  # Allow auto-incrementing
+    ProviderID: Optional[int] = None  
+
+    class Config:
+        orm_mode = True  
 
 class HealthcareProviderUpdate(BaseModel):
-    first_name: Optional[str] = None
-    last_name: Optional[str] = None
-    role: Optional[str] = None
+    FirstName: Optional[str] = None
+    LastName: Optional[str] = None
+    Role: Optional[str] = None
+
+    class Config:
+        orm_mode = True  
 
 class VitalSignsBase(SQLModel):
     BloodPressure: str
@@ -72,6 +87,11 @@ class VitalSignsUpdate(BaseModel):
     RespiratoryRate: Optional[int] = None
     Weight: Optional[float] = None
 
+    class Config:
+        orm_mode = True  
+
 class VitalSigns(VitalSignsBase):
-    VitalID: Optional[int] = None  # Allow auto-incrementing
-   
+    VitalID: Optional[int] = None  
+
+    class Config:
+        orm_mode = True  

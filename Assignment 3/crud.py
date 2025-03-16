@@ -9,13 +9,19 @@ from schemas import(
 def update_case_manager(db: Session, manager_id: int, manager: CaseManagerUpdate):
     db_manager = db.query(CaseManager).filter(CaseManager.ManagerID == manager_id).first()
     if not db_manager:
+        print(f"Case Manager with ID {manager_id} not found")
         raise HTTPException(status_code=404, detail="Case Manager not found")
     
     for key, value in manager.dict(exclude_unset=True).items():
         setattr(db_manager, key, value)
-    
-    db.commit()
-    db.refresh(db_manager)
+
+    try:
+        db.commit()
+        db.refresh(db_manager)
+    except Exception as e:
+        db.rollback() 
+        raise HTTPException(status_code=500, detail=f"Error updating Case Manager: {str(e)}")
+
     return db_manager
 
 #delete case manager

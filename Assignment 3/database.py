@@ -1,10 +1,14 @@
-from sqlmodel import SQLModel, create_engine, Session
+from sqlalchemy import create_engine
+from sqlalchemy.orm import sessionmaker, Session
 
-DATABASE_URL = "sqlite:///./test.db"
+DATABASE_URL = "sqlite:///./test.db"  
 
-engine = create_engine(DATABASE_URL, echo=True)
+engine = create_engine(DATABASE_URL, connect_args={"check_same_thread": False})
+SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
 
 def get_db():
-    with Session(engine) as session:
-        yield session
-
+    db = SessionLocal()
+    try:
+        yield db
+    finally:
+        db.close()

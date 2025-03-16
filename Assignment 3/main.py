@@ -13,12 +13,12 @@ app = FastAPI()
 def startup_event():
     create_db_and_tables()
 
-# initial message
+#initial message
 @app.get("/")
 def root():
     return {"message": "Welcome to the Vital Signs Management System!"}
 
-# routers
+#routers
 app.include_router(patients.router)
 app.include_router(case_managers.router)
 app.include_router(providers.router)

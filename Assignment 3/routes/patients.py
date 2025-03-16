@@ -2,6 +2,13 @@ from fastapi import APIRouter, Depends, HTTPException
 from sqlalchemy.orm import Session
 import crud, schemas, database
 import models
+from database import get_db
+from repositories.sql import SQLPatientRepository
+from repositories.csv import CSVRepository
+from repositories.memory import MemoryRepository
+
+def get_repository(db: Session = Depends(get_db)):
+    return SQLRepository(db)  #change to CSV or memory here 
 
 router = APIRouter(prefix="/patients", tags=["Patients"])
 
