@@ -1,4 +1,4 @@
-## Assignment 5: Migrate to Django 
+## Assignment 5: Full Django + Tests
 
 ### Main Changes Made
 #### 1. Integrated Celery/Redis for asynchronous task processing
