@@ -40,7 +40,7 @@ The system uses a Django-based backend, powered by the Django REST Framework (DR
 2. Class Diagram  <br><br>
 ![Class Diagram](images/ClassDiagram.png)
 3. Component Diagram <br><br>
-![Component Diagram](images/UseCase.png)
+![Component Diagram](images/ComponentDiagram.png)
 4. Sequence Diagram <br><br>
 ![Sequence Diagram](images/UseCase.png)
 5. State Machine <br><br>
