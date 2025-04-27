@@ -35,7 +35,7 @@ The system uses a Django-based backend, powered by the Django REST Framework (DR
 * Simple Data Entry: workflows designed for fast use by CNAs and Nurses
 * Visualization Tool: included a trend graph to help monitor patient progress
 ## UML Diagrams:
-1. Activity Diagram ![Activity Diagram](images/UseCase.png)
+1. Activity Diagram ![Activity Diagram](images/Activity.png)
 2. Class Diagram ![Class Diagram](images/UseCase.png)
 3. Component Diagram ![Component Diagram](images/UseCase.png)
 4. Sequence Diagram ![Sequence Diagram](images/UseCase.png)
