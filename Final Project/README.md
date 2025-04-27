@@ -145,3 +145,5 @@ This demonstration is found in Scenario 8 of the Gherkin Notation Expressions
 This demonstration is found in Scenarios 3 and 4 of the Gherkin Notation Expressions
 #### Use Case 3: Viewing Health Trend Graphs
 This demonstration is found in Scenarios 5 and 6 of the Gherkin Notation Expressions
+
+***All URLS and instructions on how to navigate the system are documented within each assignment as the evolutions progress***
