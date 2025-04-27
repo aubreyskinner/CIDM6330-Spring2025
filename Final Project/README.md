@@ -16,6 +16,7 @@ In healthcare, tracking and recording vital signs accurately is critical for pat
   4. Case Managers: Supervisors overseeing patient care and outcomes
 #### Solution Summary:
 The system uses a Django-based backend, powered by the Django REST Framework (DRF), to provide a fully RESTful API for managing patients, vital signs, and healthcare providers. It supports CRUD operations, ensuring efficient and structured handling. <br>
+<br>
 <b>Key Features:</b>
 * Secure Data Storage: using Django's ORM and implementing best practices
 * Data Validation: prevents entry errors and maintains integrity
