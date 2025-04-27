@@ -44,7 +44,7 @@ The system uses a Django-based backend, powered by the Django REST Framework (DR
 4. Sequence Diagram <br><br>
 ![Sequence Diagram](images/SequenceDiagram.png)
 5. State Machine <br><br>
-![State Machine Diagram](images/UseCase.png)
+![State Machine Diagram](images/StateMachineDiagram.png)
 6. Use Case Diagram <br><br>
 ![Use Case Diagram](images/UseCase.png)
 ## Evolution 1: Updated Requirements Specification
