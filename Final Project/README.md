@@ -2,7 +2,7 @@
 
 ## Table of Contents
 1. [Introduction](#introduction)
-2. [Updated Problem Domain Updated](#updated-problem-domain)
+2. [Updated Problem Domain](#updated-problem-domain)
 3. [UML Diagrams](#uml-diagrams)
 4. [Evolution 1: Updated Requirements Statements](#evolution-1-updated-requirements-specification)
 5. [Evolution 2: Updated API](#evolution-2-updated-api)
