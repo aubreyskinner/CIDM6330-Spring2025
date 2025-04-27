@@ -21,4 +21,19 @@ The system uses a Django-based backend, powered by the Django REST Framework (DR
 * Secure Data Storage: using Django's ORM and implementing best practices
 * Data Validation: prevents entry errors and maintains integrity
 * Simple Data Entry: workflows designed for fast use by CNAs and Nurses
-* Visualization Tool: included trend graph to help monitor patient progress
+* Visualization Tool: included a trend graph to help monitor patient progress
+#### UML Diagrams:
+1. Activity Diagram
+2. Class Diagram
+3. Component Diagram
+4. Sequence Diagram
+5. State Machine Diagram
+6. Use Case Diagram 
+#### Evolution 1: Updated Requirements Specification
+#### Evolution 2: Updated API
+#### Evolution 4: Migration to Django
+#### Evolution 5: Full Django + Tests
+1. Ubiquitous Language Glossary
+2. Gherkin Notation Expressions
+3. Creation of Tests
+4. Django Unit Tests for Three Use Cases
