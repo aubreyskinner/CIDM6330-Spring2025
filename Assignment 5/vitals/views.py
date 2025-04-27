@@ -54,17 +54,12 @@ def check_task_status(request, task_id):
     return Response({"status": task.status})
 
 def vital_sign_trends(request, patient_id):
-    # Fetch vital signs data for the given patient and order by timestamp
     vitals = VitalSigns.objects.filter(patient_id=patient_id).order_by('timestamp')
-    
-    # Convert the data to a DataFrame for easier handling
     data = pd.DataFrame(list(vitals.values('timestamp', 'blood_pressure', 'heart_rate', 'temperature', 'oxygen_saturation')))
     data['timestamp'] = pd.to_datetime(data['timestamp'])
     
-    # Create the plot
     plt.figure(figsize=(10, 6))
     
-    # Plot each vital sign on the same graph
     if not data.empty:
         if 'heart_rate' in data.columns:
             plt.plot(data['timestamp'], data['heart_rate'], label='Heart Rate', color='blue')
@@ -75,26 +70,17 @@ def vital_sign_trends(request, patient_id):
         if 'blood_pressure' in data.columns:
             plt.plot(data['timestamp'], data['blood_pressure'], label='Blood Pressure', color='red')
 
-    # Add labels and title
     plt.xlabel('Time')
     plt.ylabel('Vital Signs')
     plt.title(f'Vital Signs for Patient {patient_id}')
     plt.legend()
-
-    # Define the directory for saving the graph
     save_dir = os.path.join(settings.MEDIA_ROOT, 'vital_signs_graphs')
     if not os.path.exists(save_dir):
         os.makedirs(save_dir)
 
-    # Define the path for saving the graph
     plt_path = os.path.join(save_dir, f'vital_signs_trend_{patient_id}.png')
-
-    # Save the graph to a file
     plt.savefig(plt_path)
     plt.close()
 
-    # Generate the URL for the saved graph
     graph_url = f"{settings.MEDIA_URL}vital_signs_graphs/vital_signs_trend_{patient_id}.png"
-    
-    # Render the graph in the HTML template
     return render(request, 'vitals/vital_sign_trends.html', {'graph_url': graph_url})
