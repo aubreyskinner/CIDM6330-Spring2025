@@ -2,7 +2,7 @@
 
 ## Table of Contents
 1. [Introduction](#introduction)
-2. [Problem Domain Updated](#problem-domain-updated)
+2. [Updated Problem Domain Updated](#updated-problem-domain)
 3. [UML Diagrams](#uml-diagrams)
 4. [Evolution 1: Updated Requirements Statements](#evolution-1-updated-requirements-specification)
 5. [Evolution 2: Updated API](#evolution-2-updated-api)
@@ -11,7 +11,7 @@
 
 ### Introduction
 In healthcare, it is crucial to maintain accurate, easily accessible documentation. However, many home healthcare facilities do not offer effective systems for tracking patient health history. Instead, they rely on caregivers to log and keep track of vital signs independently. Relying on manual, paper-based record-keeping systems introduces a wide range of issues: data loss, illegible writing, and transcription errors. Additionally, reviewing patient history and identifying trends in a patient's health becomes difficult as there are multiple physical documents to sift through. To address these issues, I propose developing a digital system that streamlines the process of recording vital signs and offers a means to visualize trends in a patient's health. This platform will allow healthcare professionals to record vital signs directly from the patient to the database, reducing errors and improving accessibility. 
-### Problem Domain
+### Updated Problem Domain
 In healthcare, tracking and recording vital signs accurately is critical for patient care. It determines how well you can help them as a caregiver and how their doctors can better assist them. Traditionally, paper documentation can be disorganized, prone to errors, and cause delays. This system digitizes the recording, storage, and retrieval of patient vital signs to address these issues. It provides a simple, secure, and efficient way for healthcare providers (CNAs, Nurses, etc.) to record patient vital signs, view health trends, and for case managers to oversee data for supervision. 
 #### Users
 * <b>Certified Nursing Assistants (CNAs)/ Nurses:</b>
