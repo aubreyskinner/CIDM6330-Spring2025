@@ -2,12 +2,12 @@
 
 ## Table of Contents
 1. [Introduction](#introduction)
-2. [Problem Domain (<i>Updated</i>)](#problem-domain)
+2. [Problem Domain (<i>Updated</i>)](#problem-domain-updated)
 3. [UML Diagrams](#uml-diagrams)
-4. [Evolution 1: Updated Requirements Statements](#evolution-1)
-5. [Evolution 2: Updated API](#evolution-2)
-6. [Evolution 4: Migration to Django](#evolution-4)
-7. [Evolution 5: Full Django + Tests](#evolution-5)
+4. [Evolution 1: Updated Requirements Statements](#evolution-1-updated-requirements-specification)
+5. [Evolution 2: Updated API](#evolution-2-updated-api)
+6. [Evolution 4: Migration to Django](#evolution-4-migration-to-django)
+7. [Evolution 5: Full Django + Tests](#evolution-5-full-django--tests)
 
 ### Introduction
 In healthcare, it is crucial to maintain accurate, easily accessible documentation. However, many home healthcare facilities do not offer effective systems for tracking patient health history. Instead, they rely on caregivers to log and keep track of vital signs independently. Relying on manual, paper-based record-keeping systems introduces a wide range of issues: data loss, illegible writing, and transcription errors. Additionally, reviewing patient history and identifying trends in a patient's health becomes difficult as there are multiple physical documents to sift through. To address these issues, I propose developing a digital system that streamlines the process of recording vital signs and offers a means to visualize trends in a patient's health. This platform will allow healthcare professionals to record vital signs directly from the patient to the database, reducing errors and improving accessibility. 
