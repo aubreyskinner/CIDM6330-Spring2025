@@ -55,11 +55,87 @@ The system uses a Django-based backend, powered by the Django REST Framework (DR
 4. The system must be scalable and support an expanding number of patients and users<br>
 
 ## Evolution 2: Updated API
-For this evolution, the API has been implemented using Django REST Framework (DRF), ensuring that CRUD operations for patients, vital signs, and healthcare providers are supported. The ERD from earlier has been utilized to validate entities, with models expressed using Django's ORM, along with serializers to handle data validation and transformation. 
-ERD ![ERD](images/ERD.pdf)
+For this evolution, the API has been implemented using Django REST Framework (DRF), ensuring that CRUD operations for patients, vital signs, and healthcare providers are supported. The ![ERD](images/ERD.pdf) from earlier has been utilized to validate entities, with models expressed using Django's ORM, along with serializers to handle data validation and transformation. 
+#### Django REST Framework Integration:
+* Models: Django's ORM is used to define the relationships between entities
+* Serializers: DRF serializers ensure data validation between JSON and model instances
+* Views and URLs: API views are set up to handle incoming requests; URLs route users to appropriate endpoints
+
 ## Evolution 4: Migration to Django
+<b>Key Features After Migration:</b>
+1. Django ORM Integration: Django's ORM manages the data model and performs database transactions
+2. Django REST Framework API: Fully functional RESTful API using DRF, replaced FastAPI
+3. Visualizations: Graphs for trend analysis, showing how vital signs evolve over time
+The migration to Django ensures that the system now benefits from the tools that Django provides, including authentication, administrative features, and scalable architecture.
+
 ## Evolution 5: Full Django + Tests
-#### Ubiquitous Language Glossary
-#### Gherkin Notation Expressions
-#### Creation of Tests
-#### Django Unit Tests for Three Use Cases
+### Ubiquitous Language Glossary
+* <b>Patient:</b> A person receiving healthcare services and whose vital signs are recorded and monitored.
+* <b>Vital Signs:</b> Data representing a patient's health metrics- blood pressure, heart rate, temperature, respiratory rate, oxygen saturation, and weight.
+* <b>Healthcare Provider:</b> A certified professional (such as a CNA or Nurse) who records vital signs and interacts with the patient.
+* <b>Case Manager:</b> A professional responsible for overseeing patient care.
+* <b>Trend Analysis/ Visualizations:</b> The process of visualizing and interpreting a patient's vital sign data over time to assess health trajectory.
+* <b>Abnormal Vitals:</b> Vital signs that deviate from a normal range and trigger an alert.
+### Gherkin Notation Expressions
+#### Scenario 1
+Feature: Successfully start a task<br>
+Scenario: Start Task<br>
+Given that the task start endpoint is available<br>
+When a request is sent to start the task<br>
+Then the system responds with a task ID<br>
+And the response status is "200 OK"<br>
+#### Scenario 2
+Feature: Check Task Status<br>
+Scenario: Successfully check task status<br>
+Given the task with ID "fd6a9796-c5be-458b-8389-0af6696e974a" exists<br>
+When the task status is checked<br>
+Then the system responds with status "SUCCESS"<br>
+And the result is "Task completed successfully."<br>
+#### Scenario 3
+Feature: Check Task Status<br>
+Scenario: Task not found<br>
+Given the task with ID "invalid-task-id" does not exist<br>
+When a request is sent to check the task status<br>
+Then the system responds with a "404 Not Found" status<br>
+#### Scenario 4
+Feature: Check Abnormal Vitals<br>
+Scenario: Patient vitals are normal<br>
+Given the patient with ID "patient_id" has normal vitals<br>
+When the system checks the patient's latest vitals<br>
+Then the system prints "Vitals for Patient One are normal."<br>
+#### Scenario 5
+Feature: Check Abnormal Vitals<br>
+Scenario: Abnormal vital signs detected<br>
+Given that the patient with ID "patient_id" has abnormal vitals<br>
+When the system checks the patient's latest vitals<br>
+Then the system prints an alert message<br>
+And the alert contains abnormal heart rate, oxygen saturation, and temperature values<br>
+#### Scenario 6
+Feature: Check Abnormal Vitals<br>
+Scenario: No vitals found for the patient<br>
+Given that the patient with ID "patient_id" does not have recorded vitals<br>
+When the system checks the patient's latest vitals<br>
+Then the system prints "No vital signs found for Patient One."<br>
+#### Scenario 7
+Feature: Analyze Vitals<br>
+Scenario: High blood pressure detected<br>
+Given the patient with ID "patient_id" has a blood pressure reading above 140<br>
+When the system analyzes the patient's vitals<br>
+Then the system generates a "High BP" alert with the blood pressure value and timestamp<br>
+#### Scenario 8
+Feature: Record Vitals<br>
+Scenario: Successfully record patient vitals<br>
+Given the CNA or Nurse is logged in<br>
+And has a patient selected<br>
+When valid vitals are entered and submitted<br>
+Then the system saves the vitals<br>
+And updates the patient health trend graph<br>
+### Creation of Tests
+I created unit tests in Django that correspond with the Gherkin Notation expressions I defined above. These tests cover three key use cases in the Vital Sign Management System. Each test case was developed by implementing the steps outlined, ensuring that the system behaves as expected under various conditions. 
+### Django Unit Tests for Three Use Cases
+#### Use Case 1: Recording Vitals
+This demonstration is found in Scenario 8 of the Gherkin Notation Expressions
+#### Use Case 2: Viewing Patient History
+This demonstration is found in Scenarios 3 and 4 of the Gherkin Notation Expressions
+#### Use Case 3: Viewing Health Trend Graphs
+This demonstration is found in Scenarios 5 and 6 of the Gherkin Notation Expressions
