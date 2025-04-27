@@ -38,3 +38,5 @@ Tests were written using Django's TestCase class to verify:
 2. check_task_status correctly handles responses<br><br>
 <i>Test File: vitals/tests.py</i>
 
+**Additional URL for viewing health trend graphs**<br>
+To view the health trend graph, you must navigate to /graph/{patient_id}. For example, if you are looking for the data of patient 1, it would be /graph/1.
