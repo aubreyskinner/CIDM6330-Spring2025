@@ -40,7 +40,7 @@ The system uses a Django-based backend, powered by the Django REST Framework (DR
 3. Component Diagram ![Component Diagram](images/UseCase.png)
 4. Sequence Diagram ![Sequence Diagram](images/UseCase.png)
 5. State Machine ![State Machine Diagram](images/UseCase.png)
-6. Use Case Diagram ![Use Case Diagram](UseCase.png)
+6. Use Case Diagram ![Use Case Diagram](images/UseCase.png)
 ## Evolution 1: Updated Requirements Specification
 #### <b>Functional Requirements:</b>
 1. CNAs/Nurses can record patient vital signs (blood pressure, heart rate, oxygen saturation, temperature, respiratory rate, and weight)
